@@ -1,0 +1,20 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Project from "@components/Project.astro";
+import { getCollection } from "astro:content";
+
+const personalProjects = (await getCollection("personal-projects")).sort();
+---
+
+<Layout title="Projects - exylons (Lance Ross)">
+  <Header title="Projects" />
+  <p class="max-w-prose font-normal leading-relaxed">
+    My goal is to create meaningful web development related projects. Below, you'll
+    find some of my favorite creations that authored or contributed to
+    by me.
+  </p>
+  <ul class="mt-6 grid grid-cols-1 gap-6">
+    {personalProjects.map((projects) => <Project {...projects} />)}
+  </ul>
+</Layout>

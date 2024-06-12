@@ -1,0 +1,44 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import { getCollection } from "astro:content";
+import { socials } from "@data/constants";
+import Blog from "@components/Blog.astro";
+import Social from "@components/Social.astro"
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout>
+  <section>
+    <Header title="Hey! I'm Lance Ross" />
+    <p class="mt-3 max-w-prose leading-relaxed">
+      I'm also known as "exylons" or "exylods" online. I am an aspiring web
+      developer in the Philippines currently learning on STEM Strand (ICT) in my
+      Senior High School year.
+    </p>
+    
+    <h2 class="mt-12 text-2xl font-semibold dark:text-zinc-100 text-zinc-900">
+      Recent Posts
+    </h2>
+    <p class="mt-3 max-w-prose leading-relaxed">
+      This is where I share my ideas and thoughts in web development field. You can have a read if you want.
+    </p>
+    <ul class="mt-6 grid grid-cols-1 gap-6">
+      {posts.map((post) => <Blog minimal {...post} />)}
+    </ul>
+    <a
+      class="inline-block mt-7 dark:hover:text-zinc-100 hover:text-zinc-950 transition-colors"
+      href="/blog/">View all posts &rarr;</a
+    >
+  </section>
+  <h2 class="mt-12 text-2xl font-semibold dark:text-zinc-100 text-zinc-950">
+    Connect with me
+  </h2>
+  <p class="mt-3 max-w-prose leading-relaxed">If you wanna hit me a message or follow my works, you can visit my socials down below!</p>
+  <ul class="mt-4 sm:mt-6 grid sm:grid-cols-3 gap-2 sm:gap-1">
+    {socials.map((s) => <Social {...s} />)}
+  </ul>
+</Layout>
