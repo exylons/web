@@ -4,4 +4,4 @@ Disallow: /_astro/
 User-agent: *
 Allow: /
 
-Sitemap: https://exylons.vercel.app/sitemap-index.xml
+Sitemap: https://exylons.com/sitemap-index.xml

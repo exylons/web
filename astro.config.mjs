@@ -20,7 +20,7 @@ export default defineConfig({
   image: {
     service: sharpImageService(),
   },
-  site: "https://exylons.vercel.app",
+  site: "https://exylons.com",
   vite: {
     plugins: [rawFonts([".ttf", ".woff"])],
     optimizeDeps: {

@@ -1,4 +1,4 @@
-# [web](https://exylons.vercel.app)
+# [web](https://exylons.com)
 
 My personal website made in Astro and Tailwind CSS. Created by [Kevin](https://github.com/kevinzunigacuellar/) (and I just forked and modified it lol)
 
