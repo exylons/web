@@ -10,7 +10,7 @@ const posts = (await getCollection("blog")).sort(
 
 const title = "Blog - exylons (Lance Ross)";
 const description =
-  "This is where I share my thoughts, ideas, and interesting things to tell. Most of these are web developement stuff, don't worry.";
+  "This is where I share my thoughts, ideas, and interesting things to tell. Most of these are web developement stuff, some are related to tech or gaming content as an extra.";
 ---
 
 <Layout title={title} description={description}>
@@ -18,7 +18,7 @@ const description =
   <p class="max-w-prose mb-10 font-normal leading-relaxed">
     {description}
   </p>
-  <ul class="grid grid-cols-1 gap-10 sm:border-l sm:dark:border-zinc-800">
-    {posts.map((p) => <Blog {...p} />)}
+  <ul class="grid grid-cols-1 gap-8">
+    {posts.map((p) => <Blog minimal {...p} />)}
   </ul>
 </Layout>

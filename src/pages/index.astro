@@ -46,7 +46,7 @@ const posts = (await getCollection("blog")).sort(
       This is where I share my ideas and thoughts in web development field. You
       can have a read if you want.
     </p>
-    <ul class="mt-6 grid grid-cols-1 gap-6">
+    <ul class="mt-6 grid grid-cols-1 gap-8">
       {posts.map((post) => <Blog minimal {...post} />)}
     </ul>
     <a

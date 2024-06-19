@@ -20,14 +20,14 @@ const prevPost = posts[currentIndex - 1];
       <a
         href={`/blog/${nextPost.slug}/`}
         class="group flex-1 text-sm flex flex-col grow p-4 rounded-lg border border-zinc-300 dark:border-zinc-700 dark:hover:border-green-400 hover:border-green
-        -300 transition-all dark:hover:bg-green-600/20 hover:bg-green
+        -300 transition-colors dark:hover:bg-green-600/20 hover:bg-green
         -100 hover:text-green-800 hover:border-green-500 hover:bg-green-600/20"
       >
-        <p class="mb-1 group-hover:dark:text-zinc-300 group-hover:text-zinc-700">
+        <p class="mb-1 dark:text-zinc-400 text-zinc-600 group-hover:dark:text-zinc-300 group-hover:text-zinc-700 transition-colors">
           &larr; Previous post
         </p>
         <p class="font-semibold dark:text-zinc-300 text-zinc-700 group-hover:dark:text-green-400 group-hover:text-green
-        -800">
+        -800 transition-colors">
           {nextPost.data.title}
         </p>
       </a>
@@ -41,11 +41,11 @@ const prevPost = posts[currentIndex - 1];
         -300 transition-all dark:hover:bg-green-600/20 hover:bg-green
         -100 hover:text-green-800 hover:border-green-500 hover:bg-green-600/20"
       >
-        <p class="mb-1 group-hover:dark:text-zinc-300 group-hover:text-zinc-700">
+        <p class="mb-1 dark:text-zinc-400 text-zinc-600 group-hover:dark:text-zinc-300 group-hover:text-zinc-700 transition-colors">
           Next post &rarr;
         </p>
         <p class="font-semibold dark:text-zinc-300 text-zinc-700 group-hover:dark:text-green-400 group-hover:text-green
-        -800">
+        -800 transition-colors">
           {prevPost.data.title}
         </p>
       </a>
