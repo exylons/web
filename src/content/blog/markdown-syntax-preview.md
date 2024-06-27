@@ -2,12 +2,17 @@
 title: Markdown Syntax Preview
 description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 pubDate: 2024-06-10
-updatedDate: 2024-06-10
+updatedDate: 2024-06-27
 hero: "~/assets/heros/test.png"
 heroAlt: "Stelle and Clara together on Honkai Star Rail"
+categoryTags:
+  - astro
+  - tailwindcss
 ---
 
-# Table of Contents
+# Table of Contents[^1]
+
+[^1]: content from @nekochan0122
 
 # Markdown Syntax
 
@@ -137,3 +142,32 @@ Local image
 Remote image
 
 ![March 7th from Honkai Star Rail](https://www.pockettactics.com/wp-content/sites/pockettactics/2024/01/honkai-star-rail-march-7th.jpg)
+
+## Escaping Characters
+
+\* Without the backslash, this would be a bullet in an unordered list.
+
+### Footnote
+
+A note[^2]
+
+[^2]: Big note.
+
+### Strikethrough
+
+~one~ or ~~two~~ tildes.
+
+### Table
+
+| First Header   | Second Header  |
+| -------------- | -------------- |
+| Content Cell 1 | Content Cell 1 |
+| Content Cell 2 | Content Cell 2 |
+| Content Cell 3 | Content Cell 3 |
+| Content Cell 4 | Content Cell 4 |
+
+### Tasklist
+
+- [ ] to do
+- [x] done
+---
