@@ -1,8 +1,9 @@
 ---
 import { type CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
+import { Picture } from "astro:assets";
 
-type Props = CollectionEntry<"personal-projects"> & {
+type Props = CollectionEntry<"projects"> & {
   minimal?: boolean;
 };
 
@@ -23,6 +24,19 @@ function getRepositoryName(owner: string, repo: string) {
     "p-4": minimal,
   }}
 >
+  <a href={data.url} target="_blank"
+    ><Picture
+      src={data.img}
+      alt={data.imgAlt}
+      loading="eager"
+      class="rounded-xl mb-3 hover:opacity-80 dark:hover:opacity-80 transition"
+      densities={[1.5, 2]}
+      formats={["webp"]}
+      width={640}
+      height={360}
+    /></a
+  >
+
   <h2>
     <a
       class="group font-medium dark:text-zinc-200 hover:text-green-600 dark:hover:text-green-400 inline-flex gap-1 transition-colors"

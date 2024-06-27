@@ -6,7 +6,7 @@ const blogCollection = defineCollection({
       title: z.string().max(60).min(10),
       hero: image(),
       heroAlt: z.string(),
-      description: z.string().max(160).min(110),
+      description: z.string().max(160),
       pubDate: z.date(),
       updatedDate: z.date().optional(),
     }),
@@ -14,18 +14,20 @@ const blogCollection = defineCollection({
 
 const projectCollection = defineCollection({
   type: "data",
-  schema: z.object({
-    owner: z.string(),
-    repo: z.string(),
-    url: z.string().url(),
-    description: z.string(),
-    languages: z.array(z.string()),
-    website: z.string().url().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      owner: z.string(),
+      repo: z.string(),
+      img: image(),
+      imgAlt: z.string(),
+      url: z.string().url(),
+      description: z.string(),
+      languages: z.array(z.string()),
+      website: z.string().url().optional(),
+    }),
 });
 
 export const collections = {
   blog: blogCollection,
-  oss: projectCollection,
-  "personal-projects": projectCollection,
+  projects: projectCollection,
 };

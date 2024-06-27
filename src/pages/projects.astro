@@ -4,7 +4,7 @@ import Header from "@components/Header.astro";
 import Project from "@components/Project.astro";
 import { getCollection } from "astro:content";
 
-const personalProjects = (await getCollection("personal-projects")).sort();
+const personalProjects = (await getCollection("projects")).sort();
 ---
 
 <Layout title="Projects - exylons (Lance Ross)">
@@ -14,7 +14,7 @@ const personalProjects = (await getCollection("personal-projects")).sort();
     find some of my favorite creations that authored or contributed to
     by me.
   </p>
-  <ul class="mt-6 grid grid-cols-1 gap-6">
+  <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
     {personalProjects.map((projects) => <Project {...projects} />)}
   </ul>
 </Layout>

@@ -2,6 +2,8 @@ owner: exylons
 repo: web
 url: https://github.com/exylons/web
 description: My personal website, inspired by Kevin Z.
+img: ~/assets/project/web.png
+imgAlt: exylons' personal website
 languages:
   - Astro
   - Tailwind CSS
