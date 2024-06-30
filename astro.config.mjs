@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import { readFileSync } from "node:fs";
 import icon from "astro-icon";
 import expressiveCode from "astro-expressive-code";
+import mdx from "@astrojs/mdx"
 
 /** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
 const astroExpressiveCodeOptions = {
@@ -16,6 +17,7 @@ export default defineConfig({
     sitemap(),
     expressiveCode(astroExpressiveCodeOptions),
     icon(),
+    mdx(),
   ],
   image: {
     service: sharpImageService(),

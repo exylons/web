@@ -114,20 +114,20 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     </li>
     <li class="">
       <a
-        href={`${githubUrl}${Astro.url.pathname.slice(0, -1)}.md`}
+        href={`${githubUrl}${Astro.url.pathname.slice(0, -1)}.mdx`}
         class="dark:hover:text-green hover:text-green-500 transition-colors flex flex-row sm:justify-start sm:flex-row-reverse items-center"
         ><Icon name="edit" size={16} class="sm:ml-1 max-sm:mr-1" />Typo? Edit it here</a
       >
     </li>
   </ul>
-  <Toast icon="share" description="Link copied to clipboard." classlist="" />
+  <Toast icon="share" description="Link copied to clipboard." idList="toast-share" />
   <Pagination />
 </Layout>
 
 <script is:inline async>
   document.getElementById("copy").addEventListener("click", function () {
     let copyText = window.location.href;
-    let toastElement = document.getElementById("toast");
+    let toastElement = document.getElementById("toast-share");
 
     navigator.clipboard.writeText(copyText).then(() => {
       toastElement.classList.add("!opacity-100");
