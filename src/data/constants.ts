@@ -13,11 +13,6 @@ export const defaultMeta = {
 
 export const socials = [
   {
-    icon: "x",
-    href: "https://x.com/exylods/",
-    username: "exylods",
-  },
-  {
     icon: "github",
     href: "https://github.com/exylons",
     username: "exylons",

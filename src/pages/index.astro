@@ -59,15 +59,24 @@ const posts = (await getCollection("blog")).sort(
       Connect with me
     </h2>
     <p class="mt-3 max-w-prose leading-relaxed">
-      If you wanna hit me a message or follow my works, you can visit my socials
-      down below!
+      My only way of communication is via email or Signal. If you wanna hit me a message or follow my works, feel free to do so!
     </p>
     <ul class="mt-4 sm:mt-6 grid sm:grid-cols-3 gap-2 sm:gap-1">
-      <li id="copy" title="Copy the Discord username">
+      <li id="copy-email" title="Copy the email">
         <span
           id="copyText"
           class="inline-flex gap-2 items-center group cursor-pointer hover:text-green-600 dark:hover:text-green-400 transition-colors"
-          ><Icon name="discord" size={16} />exylons<Icon
+          ><Icon name="email" size={16} />hi@exylons.com<Icon
+            name="clipboard"
+            class="-ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
+          /></span
+        >
+      </li>
+      <li id="copy-signal" title="Copy Signal username">
+        <span
+          id="copyText"
+          class="inline-flex gap-2 items-center group cursor-pointer hover:text-green-600 dark:hover:text-green-400 transition-colors"
+          ><Icon name="signal" size={16} />exylons.23<Icon
             name="clipboard"
             class="-ml-1 opacity-0 group-hover:opacity-100 transition-opacity"
           /></span
@@ -75,24 +84,34 @@ const posts = (await getCollection("blog")).sort(
       </li>
       {socials.map((s) => <Social {...s} />)}
     </ul>
+    <Toast icon="email" description="Email copied to clipboard." idList="toast-email" />
     <Toast
-      icon="clipboard"
+      icon="signal"
       description="Username copied to clipboard."
-      classlist=""
+      idList="toast-signal"
     />
   </section>
 </Layout>
 
 <script is:inline async>
-  document.getElementById("copy").addEventListener("click", function () {
-    let copyText = "exylons";
-    let toastElement = document.getElementById("toast");
-
+  document.getElementById("copy-email").addEventListener("click", () => {
+    let copyText = "hi@exylons.com",
+      toastElement = document.getElementById("toast-email");
     navigator.clipboard.writeText(copyText).then(() => {
-      toastElement.classList.add("!opacity-100");
-      setTimeout(() => {
-        toastElement.classList.remove("!opacity-100");
-      }, 2500);
+      toastElement.classList.add("!opacity-100"),
+        setTimeout(() => {
+          toastElement.classList.remove("!opacity-100");
+        }, 2500);
     });
-  });
+  }),
+    document.getElementById("copy-signal").addEventListener("click", () => {
+      let copyText = "exylons.23",
+        toastElement = document.getElementById("toast-signal");
+      navigator.clipboard.writeText(copyText).then(() => {
+        toastElement.classList.add("!opacity-100"),
+          setTimeout(() => {
+            toastElement.classList.remove("!opacity-100");
+          }, 2500);
+      });
+    });
 </script>
