@@ -8,10 +8,12 @@ heroAlt: "Stelle and Clara together on Honkai Star Rail"
 ---
 
 import AudioPlayer from '@components/MDX/AudioPlayer.astro'
+import Callout from '@components/MDX/Callout.astro'
+import SpotifyEmbed from '@components/MDX/SpotifyEmbed.astro'
 
 # Table of Contents[^1]
 
-[^1]: content from @nekochan0122
+[^1]:  From @nekochan0122
 
 # Markdown Syntax
 
@@ -150,7 +152,7 @@ Remote image
 
 A note[^2]
 
-[^2]: Big note.
+[^2]: Footnote (of course, at the end).
 
 ### Strikethrough
 
@@ -173,4 +175,28 @@ A note[^2]
 
 # Audio Player
 
+Might be loud on your device. Please adjust the volume before playing.
+
 <AudioPlayer audioFile="../../../audios/sample.mp3" title="Sample Audio Title" description="Sample Audio Description" />
+
+# Callouts[^3]
+
+[^3]: UI from @nekochan0122
+
+<Callout title="Lance Ross">Black and White.</Callout>
+
+<Callout title="Sample" type="info">Imagine this is a payment portal app.</Callout>
+
+<Callout title="Payment Success!" type="success">Successfully paid 500$ to @exylons!</Callout>
+
+<Callout title="Payment Failed."type="warning">There is a problem with your payment method. Please try again.</Callout>
+
+<Callout title="NOTICE" type="error">Your account has been terminated due to money laundering.</Callout>
+
+# Spotify Embed
+
+I do not own these songs! I just picked this song to show the Spotify embed code (from Spotify AB) as a component on my website.
+
+<SpotifyEmbed size="small" link="https://open.spotify.com/track/5PspcXQtSiTDRPa8V5PHYf"/>
+<SpotifyEmbed size="large" link="https://open.spotify.com/track/5PspcXQtSiTDRPa8V5PHYf"/>
+<SpotifyEmbed size="large" link="https://open.spotify.com/artist/5zixe6AbgXPqt4c1uSl94L"/>
