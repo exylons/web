@@ -10,6 +10,7 @@ module.exports = {
       },
       typography: (theme) => ({
         DEFAULT: {
+          ".no-prose": false,
           css: {
             "code::before": {
               content: '""',

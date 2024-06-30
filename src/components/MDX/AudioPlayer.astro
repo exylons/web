@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  audioFile: string;
+  title: string;
+  description: string;
+}
+const { audioFile, title, description } = Astro.props;
+---
+
+<audio id="player" src={audioFile}></audio>
+<div class="dark:bg-zinc-900 w-full flex shadow-sm rounded-xl !no-prose">
+  <div class="p-2 flex">
+    <button
+      class="play-pause-button dark:bg-zinc-800 dark:hover:bg-zinc-700/70 transition mr-5 p-7 cursor-pointer rounded-xl"
+      id="togglePlayPauseButton"
+    >
+      <Icon name="play" class="w-6 h-6" id="PlayLogo" />
+      <Icon name="pause" class="w-6 h-6 hidden" id="PauseLogo" />
+    </button>
+    <li class="group flex flex-col">
+      <p class="font-bold my-1 max-w-prose leading-relaxed">{title}</p>
+      <p class="my-1 max-w-prose leading-relaxed">{description}</p>
+    </li>
+  </div>
+</div>
+
+<script is:inline>
+let isPlaying = false;
+let PlayLogo = document.getElementById("PlayLogo");
+let PauseLogo = document.getElementById("PauseLogo");
+document
+    .getElementById("togglePlayPauseButton")
+    .addEventListener("click", () => {
+        const player = document.getElementById("player");
+        if (isPlaying) {
+            player.pause();
+            PlayLogo.classList.remove("hidden");
+            PauseLogo.classList.add("hidden");
+        } else {
+            player.play();
+            PlayLogo.classList.add("hidden");
+            PauseLogo.classList.remove("hidden");
+        }
+        isPlaying = !isPlaying;
+    });
+</script>

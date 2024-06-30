@@ -5,10 +5,9 @@ pubDate: 2024-06-10
 updatedDate: 2024-06-27
 hero: "~/assets/heros/test.png"
 heroAlt: "Stelle and Clara together on Honkai Star Rail"
-categoryTags:
-  - astro
-  - tailwindcss
 ---
+
+import AudioPlayer from '@components/MDX/AudioPlayer.astro'
 
 # Table of Contents[^1]
 
@@ -171,3 +170,7 @@ A note[^2]
 - [ ] to do
 - [x] done
 ---
+
+# Audio Player
+
+<AudioPlayer audioFile="../../../audios/sample.mp3" title="Sample Audio Title" description="Sample Audio Description" />
