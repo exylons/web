@@ -16,10 +16,11 @@ interface Props {
   pubDate: Date;
   url: string;
   updatedDate: Date | undefined;
+  readingTime: string;
 }
 const githubUrl = "https://github.com/exylons/web/tree/main/src/content";
 
-const { title, description, image, imageAlt, pubDate, url, updatedDate } =
+const { title, description, image, imageAlt, pubDate, url, updatedDate, readingTime } =
   Astro.props;
 
 const ogImage = {
@@ -50,6 +51,10 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
       class="block mb-4 text-sm sm:text-base"
     >
       {fullPubDate}
+      <span>
+        <span aria-hidden="true"> • </span>
+        {readingTime}
+      </span>
     </time>
     <h1
       class="text-2xl sm:text-4xl pb-8 font-bold dark:text-zinc-100 text-zinc-950"
@@ -71,10 +76,10 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
         <span class="block font-semibold">{author}</span>
         <a
           class="dark:text-green-400 text-green-600 hover:underline block"
-          href="https://x.com/exylods"
+          href="https://github.com/exylons"
           target="_blank"
           rel="noopener noreferrer"
-          >{twitter}
+          >@exylons
         </a>
       </p>
     </div>
