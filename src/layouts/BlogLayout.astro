@@ -136,9 +136,9 @@ const fullUpdatedDate = updatedDate?.toLocaleDateString("en", {
     let toastElement = document.getElementById("toast-share");
 
     navigator.clipboard.writeText(copyText).then(() => {
-      toastElement.classList.add("!opacity-100");
+      toastElement.classList.remove("!invisible");
       setTimeout(() => {
-        toastElement.classList.remove("!opacity-100");
+        toastElement.classList.add("!invisible");
       }, 2500);
     });
   });
