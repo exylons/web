@@ -32,8 +32,4 @@ export const navigation = [
     href: "/blog/",
     text: "blog",
   },
-  {
-    href: "/setup/",
-    text: "setup",
-  },
 ];
