@@ -7,8 +7,7 @@ import expressiveCode from "astro-expressive-code";
 import mdx from "@astrojs/mdx";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import { remarkReadingTime } from './remark-reading-time.mjs';
-
+import { remarkReadingTime } from "./remark-reading-time.mjs";
 
 /** @type {import('astro-expressive-code').AstroExpressiveCodeOptions} */
 const astroExpressiveCodeOptions = {
@@ -39,6 +38,10 @@ export default defineConfig({
     ],
   },
   integrations: [
+    (await import("astro-compress")).default({
+      CSS: false,
+      SVG: false,
+    }),
     tailwind(),
     sitemap(),
     expressiveCode(astroExpressiveCodeOptions),
