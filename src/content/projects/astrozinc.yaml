@@ -2,7 +2,7 @@ owner: exylons
 repo: astrozinc
 url: https://github.com/exylons/astrozinc
 description: An Astro blogging template inspired with zinc color.
-img: ~/assets/project/astrozincdev.png
+img: ~/assets/project/astrozinc.png
 imgAlt: astrozinc astro template
 languages:
   - Astro

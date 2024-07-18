@@ -22,14 +22,14 @@ export const socials = [
 export const navigation = [
   {
     href: "/",
-    text: "home",
+    text: "Home",
   },
   {
     href: "/projects/",
-    text: "projects",
+    text: "Projects",
   },
   {
     href: "/blog/",
-    text: "blog",
+    text: "Blog",
   },
 ];

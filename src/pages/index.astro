@@ -32,7 +32,7 @@ const posts = (await getCollection("blog")).sort(
     <div class="sm:mr-5">
       <Header title="Hey! I'm Lance Ross" />
       <p class="mt-3 max-w-prose leading-relaxed">
-        I'm also known as "exylons" or "exylods" online. I am an aspiring web
+        I'm also known as "exylons" online. I am an aspiring web
         developer in the Philippines currently learning on STEM Strand (ICT) in
         my Senior High School year.
       </p>
@@ -62,7 +62,7 @@ const posts = (await getCollection("blog")).sort(
       My only way of communication is via email. If you wanna hit me a message or follow my works, feel free to do so!
     </p>
     <ul class="mt-4 sm:mt-6 grid sm:grid-cols-3 gap-2 sm:gap-1">
-      <li id="copy-email" title="Copy the email">
+      <li id="copy-email" title="Select and copy my email manually">
         <span
           id="copyText"
           class="inline-flex gap-2 items-center group"
@@ -74,19 +74,5 @@ const posts = (await getCollection("blog")).sort(
       </li>
       {socials.map((s) => <Social {...s} />)}
     </ul>
-    <Toast icon="email" description="Email copied to clipboard." idList="toast-email" />
   </section>
 </Layout>
-
-<script is:inline async>
-  document.getElementById("copy-email").addEventListener("click", () => {
-    let copyText = "hi@exylons.com",
-      toastElement = document.getElementById("toast-email");
-    navigator.clipboard.writeText(copyText).then(() => {
-      toastElement.classList.remove("!invisible"),
-        setTimeout(() => {
-          toastElement.classList.add("!invisible");
-        }, 2500);
-    });
-  }),
-</script>
